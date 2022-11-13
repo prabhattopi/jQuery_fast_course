@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+	<style>
+		body {
+			font-size: 17px;
+			font-family: arial;
+			background: #f4f4f4;
+			line-height: 1.5em;
+		}
+
+		header {
+			background: #333;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+			border-bottom: 4px #000 solid;
+			margin-bottom: 10px;
+		}
+
+		#container {
+			width: 90%;
+			margin: auto;
+			padding: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>jQuery Crash Course</h1>
+	</header>
+	<div id="container">
+		<h3>Mouse Events</h3>
+		<button id="btn1">Button 1</button>
+		<button id="btn2">Button 2</button>
+		<p class="para1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quisquam accusamus optio
+			architecto reiciendis, dolorem odit cumque doloremque cum nisi asperiores dolores nostrum incidunt! Nostrum
+			magnam accusantium laborum excepturi deleniti culpa labore dignissimos aliquam repudiandae. Earum assumenda
+			ratione debitis nesciunt magnam, deleniti ad maiores at?</p>
+			<h1 id="coords"></h1>
+			<hr>
+			<form action="" id="form">
+				<label>Name</label><br>
+			<input type="text" id="name" name="name">
+			<br>
+			<label>Email</label><br>
+			<input type="text" id="email" name="email">
+			<br>
+			<label>Gender</label><br>
+			<select id="gender" name="gender">
+				<option value="male">Male</option>
+				<option value="female">Female</option>
+			</select>
+			<br>
+			<input type="submit" value="Submit">
+			</form>
+</body>
+
+</html>
+<script>
+
+	//shorthandClickFucntion
+	// $("#btn1").click(function () { 
+
+	// 	// alert("Button 1 Clicked")
+	//    $(".para1").toggle()
+
+
+
+	//  })
+
+	//on using same click funciton
+	// $("#btn2").on("click",function () { 
+
+	// 	// alert("Button 1 Clicked")
+	//    $(".para1").show()
+   //  })
+
+
+
+	//doubleClick
+	// $("#btn1").dblclick(()=>{
+	// 	   $(".para1").toggle()
+	// })
+
+
+	//hover(shorthand)
+	// $("#btn1").hover(()=>{
+	// 	   $(".para1").toggle()
+	// })
+
+
+    //hover combine works together
+	// $("#btn1").on("mouseenter",() => {
+	// 	$(".para1").toggle()
+	// })
+	// $("#btn1").on("mouseleave",() => {
+	// 	$(".para1").toggle()
+	// })
+
+	//mousemove
+	//  $("#btn1").on("mousemove",() => {
+	// 	$(".para1").toggle()
+	// })
+
+	//mouseup
+	//  $("#btn1").on("mouseup",() => {
+	// 	$(".para1").toggle()
+	// })
+	// //mousedown
+	//  $("#btn1").on("mousedown",() => {
+	// 	$(".para1").toggle()
+	// })
+
+
+
+
+// on using same click funciton passing parameter
+	// $("#btn2").on("click",function (e) { 
+
+	// 	// console.log(e.currentTarget.id)
+	// 	// console.log(e.currentTarget.innerHTML)
+	// 	// console.log(e.currentTarget.outerHTML)
+	// 	console.log(e.currentTarget.outerHTML)
+
+    // })
+
+	//mouseMove coordinates of button if btn or whole screen if document
+
+	// 	 $("#btn1").on("mousemove",(e) => {
+	// 	$("#coords").html("Coords :Y: "+ e.clientY+" "+"X: "+e.clientX)
+	// })
+
+
+
+	// $("input").focus(function(){
+	// 	// alert("Focus")
+	// 	$(this).css("background","pink")
+	// })
+	// $("input").blur(function(){
+	// 	// alert("Focus")
+	// 	$(this).css("background","#f4f4f4")
+	// })
+    
+	// $("input").keyup(function(e){
+	// 	console.log(e.target.value)
+	// })
+
+
+	//select ka funda
+	// $("select#gender").change(function(e){
+	// 	alert(`changed to ${e.target.value}`)
+	// })
+
+	//whole form now to picture
+
+	$("#form").submit(function (e) { 
+		e.preventDefault()
+		let x=$("input#name").val()
+		console.log(x)
+	 })
+
+  
+
+
+</script>
