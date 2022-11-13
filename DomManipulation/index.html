@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <style>
+		body{
+			font-size: 17px;
+			font-family: arial;
+			background: #f4f4f4;
+			line-height: 1.5em;
+		}
+		header{
+			background:#333;
+			color:#fff;
+			padding:20px;
+			text-align: center;
+			border-bottom: 4px #000 solid;
+			margin-bottom: 10px;
+		}
+		#container{
+			width:90%;
+			margin:auto;
+			padding:10px;
+		}
+        .myClass{
+            color: blue;
+            background: black;
+        }
+	</style>
+</head>
+<body>
+	<header>
+		<h1>jQuery Crash Course | DOM Manipulation</h1>
+	</header>
+	<div id="container">
+		<button id="btn1">Button1</button>
+        <p class="para1">This is a Paragraph</p>
+        <p class="para2">This is an another paragraph</p>
+        <div id="mydiv">
+
+
+        </div>
+        <input type="text" id="newItem">
+        <ul id="list__item">
+            <li> List-Item-1</li>
+            <li> List-Item-2</li>
+            <li> List-Item-3</li>
+            <li> List-Item-4</li>
+        </ul>
+        <a href="http://google.com">Google</a>
+        <ul id="users">
+
+        </ul>
+	</div>
+</body>
+</html>
+<script>
+$(document).ready(function(){
+    //single Css
+    // $("p.para1").css("color","red")
+
+    //Multiple Css
+    // $("p.para1").css({"color":"white",backgroundColor:"darkgreen"})
+
+    //addclass which is not in html but through css
+    // $("p.para2").addClass("myClass")
+    // $("p.para2").removeClass("myClass")
+
+    //toggle classes
+    // $("#btn1").click(function (e) { 
+    //     $("p.para2").toggleClass("myClass")
+    //  })
+
+     //text just like innerText
+    //  $("#mydiv").text("hello World")
+
+    //html just like innerHtml
+    // $("#mydiv").html("<h1>Hello world</h1>")
+
+    //get Value
+    // alert($("#mydiv").text())
+
+    //gethtmlalso
+
+
+    //apend and prepend
+    //append to last
+    // $("ul").append("<li>Append List Item</li>")
+    // //prepend add to first
+    // $("ul").prepend("<li>Prepend List Item</li>")
+
+    // //append to last me kar dega
+    // $(".para1").appendTo(".para2")
+    // //prepend to first me dega
+    // $(".para1").prependTo(".para2")
+
+    //before and after
+    // $("ul").before("<h4>Hello before ul</h4>")
+    // $("ul").after("<h4>Hello After  ul</h4>")
+
+    //empty ul is there but ul is still in the html
+    // $("ul").empty()
+
+    //detach complete ul gayab 😝
+    // $('ul').detach()
+
+    //attribute
+    // $("a").attr("target","_blank")
+    //get attribute
+    // alert($("a").attr("href"))
+
+    //removeattr
+    //  $("a").removeAttr("target")
+
+
+    //single wrap li <h1>p
+                     //p
+                    //</h1>
+    // $("p").wrap("<h1>")
+
+    //WrapAll
+    //  $("p").wrapAll("<h1>")
+
+  //keyup event
+ 
+//    $("#newItem").keyup(function (e) {
+//     var code=e.which
+//     if(code==13){
+//         e.preventDefault()
+//         $("ul").append("<li>"+e.target.value+"</li>")
+//      }
+//      })
+
+   
+
+
+//   let myArray=["Brad","Kelley","Nate","Jose"]
+//   $.each(myArray,function (i,val) { 
+//     $("#users").append("<li>"+val+"</li>")
+
+//   })
+
+//covert list to array and then show to dom as innerhtml
+ let newArray=$("ul#list__item li").toArray()
+ $.each(newArray,function (i,val) { 
+    $("#users").append("<li>"+val.innerHTML+"</li>")
+
+  })
+
+
+
+
+
+
+
+
+
+})
+
+</script>
